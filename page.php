@@ -1,15 +1,15 @@
 <?php get_header(); ?>
 
 <div class="container">
-    <?php the_post_thumbnail(); ?>
+    <img class="img-thumbnail img-fluid" src="<?php the_post_thumbnail_url(); ?>" alt="">
     <article>
-        <?php 
-            if(have_posts()) {
-                while(have_posts()) {
-                    the_post();
-                    get_template_part('template-parts/content', 'page');
-                }
+        <?php
+        if (have_posts()) {
+            while (have_posts()) {
+                the_post();
+                get_template_part('template-parts/content', 'page');
             }
+        }
         ?>
     </article>
 
@@ -19,5 +19,5 @@
     <p>page.php</p>
     <hr>
 </div>
- 
+
 <?php get_footer(); ?>
