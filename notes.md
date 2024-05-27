@@ -18,3 +18,33 @@ single.php: Template for displaying individual posts.
 style.css: Main stylesheet for the theme.
 
 ```
+
+## Front Page
+
+The site’s homepage or front page is the first page visitors will see. Its layout can vary greatly between websites. The front page hierarchy has three templates:
+
+front-page.php
+home.php
+index.php
+
+
+## single.php => singhe-post functions
+
+```php
+<?php the_title(); ?>
+<?php the_content(); ?>
+<?php the_excerpt(); ?>
+<?php 
+if ( has_post_thumbnail() ) { 
+    the_post_thumbnail('thumbnail'); // other sizes: 'medium', 'large', 'full', or custom size
+}
+?>
+<?php the_meta(); ?>
+<?php the_author(); ?>
+<?php the_date(); ?>
+<?php the_category(', '); ?>
+<?php the_tags('', ', ', ''); ?>
+<?php comments_template(); ?>
+
+
+```

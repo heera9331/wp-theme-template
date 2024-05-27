@@ -1,13 +1,21 @@
 <?php get_header(); ?>
 
 <div class="container">
-	<h1><?php the_title(); ?></h1>
-	
-
-	
-	<hr>
-	<p>archive.php</p>
+    <article>
+        <?php 
+            if(have_posts()) {
+                while(have_posts()) {
+                    the_post(); 
+                }
+            }
+            get_template_part('template-parts/content', 'archive'); 
+        ?>
+    </article>
 </div>
 
+
+<hr>
+<p>template is => archive.php</p>
+<hr>
 
 <?php get_footer(); ?>

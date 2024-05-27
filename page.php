@@ -7,13 +7,16 @@
             if(have_posts()) {
                 while(have_posts()) {
                     the_post();
-                    get_template_part('template-parts/content', 'article');
+                    get_template_part('template-parts/content', 'page');
                 }
             }
         ?>
     </article>
+
+    <!-- dynamic sidebar -->
+    <?php // dynamic_sidebar('sidebar-1'); ?>
     <hr>
-    <p>single.php</p>
+    <p>page.php</p>
     <hr>
 </div>
  
