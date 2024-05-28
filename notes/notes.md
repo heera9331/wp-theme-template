@@ -27,15 +27,14 @@ front-page.php
 home.php
 index.php
 
-
 ## single.php => singhe-post functions
 
 ```php
 <?php the_title(); ?>
 <?php the_content(); ?>
 <?php the_excerpt(); ?>
-<?php 
-if ( has_post_thumbnail() ) { 
+<?php
+if ( has_post_thumbnail() ) {
     the_post_thumbnail('thumbnail'); // other sizes: 'medium', 'large', 'full', or custom size
 }
 ?>
@@ -48,3 +47,18 @@ if ( has_post_thumbnail() ) {
 
 
 ```
+
+## Resouces links
+
+https://www.hostinger.in/tutorials/wordpress-template-hierarchy
+
+## Visual Resources
+
+[](./01-wordpress-template-hierarchy.webp)
+[](./02-front-page-hierarchy-1.webp)
+[](./03-single-posts-hierarchy-1536x930.webp)
+[](./04-single-pages-hierarchy-1536x1058.webp)
+[](./05-category-archive-hierarchy-1536x608.webp)
+[](./06-custom-post-types-hierarchy-1536x490.webp)
+[](./07-search-results-pages-hierarchy-1536x452.webp)
+[](./08-404-error-pages-hierarchy-1536x452.webp)
