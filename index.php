@@ -3,13 +3,11 @@
 <div class="container">
 
   <div class="row">
-    <div class="col-sm-3">
-      <h2>left sidebar</h2>
+    <div class="col-sm-2">
       <?php get_sidebar('left-sidebar'); ?>
     </div>
-    <div class="col-sm-6">
+    <div class="col-sm-8">
       <article>
-        <h2>main - middle content</h2>
         <?php
         if (have_posts()) {
           while (have_posts()) {
@@ -21,8 +19,7 @@
         <?php the_posts_pagination(); ?>
       </article>
     </div>
-    <div class="col-sm-3">
-      <h2>right sidebar</h2>
+    <div class="col-sm-2">
       <?php get_sidebar('right-sidebar'); ?>
     </div>
   </div>

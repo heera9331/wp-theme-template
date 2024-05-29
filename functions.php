@@ -64,4 +64,34 @@ register_sidebar(
     )
 );
 
-?>
+
+
+/**
+ * theme option additions
+ */
+
+function my_theme_add_admin_menu()
+{
+    add_menu_page(
+        'WP-Theme Options', // Page title
+        'WP-Theme', // Menu title
+        'manage_options', // Capability
+        'wp-theme', // Menu slug
+        'my_theme_options_page', // Callback function
+        '', // Icon URL (optional)
+        61 // Position (optional)
+    );
+}
+
+
+function my_theme_options_page()
+{
+    ?>
+    <div class="wrap">
+        <h1>WP Theme Options</h1>
+    </div>
+    <?php
+}
+
+
+add_action('admin_menu', 'my_theme_add_admin_menu');
