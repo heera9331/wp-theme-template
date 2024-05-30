@@ -107,3 +107,45 @@ function my_theme_options_page()
 
 
 add_action('admin_menu', 'my_theme_add_admin_menu');
+
+
+
+/**
+ * creating theme pages when theme is install
+ */
+
+
+function create_wp_theme_home_page()
+{
+    $default_pages = array(
+        'Home' => array(
+            'title' => 'Home',
+            'content' => 'Welcome to our website!',
+            'template' => 'index.php',
+        ),
+    );
+
+    foreach ($default_pages as $slug => $page) {
+        // Check if the page already exists
+        if (!get_page_by_path($slug)) {
+            // Create the page
+            $page_id = wp_insert_post(
+                array(
+                    'post_title' => $page['title'],
+                    'post_content' => $page['content'],
+                    'post_status' => 'publish',
+                    'post_type' => 'page',
+                    'post_name' => $slug,
+                )
+            );
+
+            // Assign the template if specified
+            if ($page_id && isset($page['template'])) {
+                update_post_meta($page_id, '_wp_page_template', $page['template']);
+            }
+        }
+    }
+}
+
+
+add_action('after_switch_theme', 'create_wp_theme_home_page');
